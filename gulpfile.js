@@ -1,13 +1,16 @@
 var gulp = require('gulp'),
     del = require('del'),
-    concat = require('gulp-concat');
-
+    concat = require('gulp-concat'),
+    browserify = require('browserify'),
+    browserifyShim = require('browserify-shim'),
+    source = require('vinyl-source-stream'),
+    connect = require('connect')
 
 var BUILD_FOLDER = 'build'
 
 
 gulp.task('clean', function (cb) {
-    return del(BUILD_FOLDER,cb);
+    del(BUILD_FOLDER,cb);
 });
 
 gulp.task('style',function() {
@@ -34,3 +37,17 @@ gulp.task('assets',function() {
            ).pipe(gulp.dest(BUILD_FOLDER));    
 });
 
+gulp.task("options",function() {
+    return browserify({entries: ["./src/chrome/options.js"]})
+        .bundle()
+        .pipe(source("options.js"))
+        .pipe(gulp.dest(BUILD_FOLDER));
+});
+
+gulp.task("serve",function(next) {
+    var staticServer = connect();
+     var staticServerPath = BUILD_FOLDER;
+     staticServer.use(connect.static(staticServerPath)).listen(process.env.PORT || 8000, next); 
+});
+
+gulp.task("default",["assets","style","options"]);
