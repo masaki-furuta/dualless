@@ -1,11 +1,5 @@
-requirejs.config({
-	paths : {
-		"dualless" : "."
-	}
-});
+var bookmarkData = require("./data/bookmarkdata");
 
-require([ "dualless/data/bookmarkdata"],
-        function(bookmarkData) {    
 
 function OptionsController($scope) {
     $scope.options = {}
@@ -61,4 +55,3 @@ function OptionsController($scope) {
     $(document).ready(function() {
 		angular.bootstrap(document,["options"]);
 	});	
-})

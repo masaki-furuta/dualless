@@ -1,12 +1,5 @@
 
-define(["module"],
-        function(self) {
             
-    var uri = self.uri;
-    var arr = uri.split("/");
-    arr.pop();
-    uri = arr.join("/");	
-
     var initialData = {
         "links": {
             "H_60_40_1": [{
@@ -17,9 +10,9 @@ define(["module"],
         }
     }
 
-    return {
-        data : function() {
-            return initialData;
-        }
-    }
-});
+
+module.exports = {
+    data : function() {
+        return initialData;
+    }    
+}
