@@ -50,4 +50,21 @@ gulp.task("serve",function(next) {
      staticServer.use(connect.static(staticServerPath)).listen(process.env.PORT || 8000, next); 
 });
 
-gulp.task("default",["assets","style","options"]);
+gulp.task("background",function(next) {
+    return browserify({
+        entries: ['./src/chrome/background.js']
+    }).bundle()
+    .pipe(source('background.js'))
+    .pipe(gulp.dest(BUILD_FOLDER));    
+});
+
+gulp.task("popup",function(next) {
+    return browserify({
+        entries: ['./src/chrome/popup.js']
+    }).bundle()
+    .pipe(source('popup.js'))
+    .pipe(gulp.dest(BUILD_FOLDER));    
+});
+
+
+gulp.task("default",["assets","style","options","background","popup"]);
