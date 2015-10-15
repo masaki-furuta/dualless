@@ -7,13 +7,13 @@ function manager() {
 
 requirejs.config({
     paths : {
-        "dualless" : "."
+        "dualless" : __dirname
     }
 });
 
-require(["sys/windowmanager",
-         "sys/toolbox"],
-		function(WindowManager,toolbox) {
+var WindowManager = require("sys/windowmanager");
+var toolbox = require("sys/toolbox");
+
 
 	if (localStorage.pairingModeEnabled == undefined)
 		localStorage.pairingModeEnabled = 1;
@@ -41,7 +41,6 @@ require(["sys/windowmanager",
 		});
 	}
 	
-});
 
 var _log = [];
 

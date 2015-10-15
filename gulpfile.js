@@ -5,7 +5,7 @@ var gulp = require('gulp'),
     browserifyShim = require('browserify-shim'),
     source = require('vinyl-source-stream'),
     connect = require('connect')
-
+    
 var BUILD_FOLDER = 'build'
 
 
@@ -52,8 +52,10 @@ gulp.task("serve",function(next) {
 
 gulp.task("background",function(next) {
     return browserify({
-        entries: ['./src/chrome/background.js']
-    }).bundle()
+        entries: ['./src/chrome/background.js'],
+        paths: ['./src/chrome']
+    })
+    .bundle()
     .pipe(source('background.js'))
     .pipe(gulp.dest(BUILD_FOLDER));    
 });

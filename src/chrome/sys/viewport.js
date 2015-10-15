@@ -1,12 +1,18 @@
-define(["dualless/utils/rect",
-        "dualless/sys/os",
-        "dualless/sys/toolbox",
-        "dualless/utils/split"], 
-		function sys(Rect,
-                        os,
-						toolbox,
-						split) {
-	
+
+var Rect = require("utils/rect");
+var os = require("./os");
+var toolbox = require("./toolbox");
+var split = require("utils/split");
+
+//define(["../utils/rect",
+//        "./os",
+//        "./toolbox",
+//        "../utils/split"], 
+//		function sys(Rect,
+//                        os,
+//						toolbox,
+//						split) {
+//	
 	/** Viewport controller
 	 * 
 	 * @constructor
@@ -139,5 +145,5 @@ define(["dualless/utils/rect",
 	};
 	
 	
-	return Viewport;
-});
+module.exports = Viewport;
+//});

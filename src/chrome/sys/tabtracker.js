@@ -4,7 +4,6 @@
  * 
  */
 
-define(function() {
    
    function TabTracker() {
        this._tabs = {};
@@ -108,6 +107,5 @@ define(function() {
        });
        
    }
-    
-   return TabTracker; 
-});
+
+module.exports = TabTracker; 

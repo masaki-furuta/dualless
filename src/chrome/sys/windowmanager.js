@@ -15,12 +15,21 @@
  * 
  * */
 
-define(["dualless/sys/viewport",
-		 "dualless/sys/os",
-		 "dualless/lib/eventemitter",
-		 "dualless/sys/toolbox",
-         "dualless/utils/taskrunner",
-         "dualless/sys/tabtracker"
+
+var Viewport = require("./viewport");
+var os = require("./os");
+var EventEmitter = require("../lib/eventemitter");
+var toolbox = require("./toolbox");
+var TaskRunner = require("..//utils/taskrunner");
+var TabTracker = require("./tabtracker");
+
+/*
+define(["./viewport",
+		 "./os",
+		 "../lib/eventemitter",
+		 "./toolbox",
+         "..//utils/taskrunner",
+         "./tabtracker"
          ], 
 		function sys(Viewport,
 					   os,
@@ -28,7 +37,7 @@ define(["dualless/sys/viewport",
 					   toolbox,
                        TaskRunner,
                        TabTracker) {
-
+*/
 	var WindowManager = function() {
         var manager = this;
         
@@ -555,5 +564,7 @@ define(["dualless/sys/viewport",
         this._tracker.tabAsync(link.url,callback);
     }
     
-	return WindowManager;
-});
+//	return WindowManager;
+// });
+
+module.exports = WindowManager;

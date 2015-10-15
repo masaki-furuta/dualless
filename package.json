@@ -7,13 +7,14 @@
     "gulp": "^3.8.10"
   },
   "devDependencies": {
-    "gulp": "^3.8.10",
-    "del": "^1.1.1",
-    "gulp-concat": "^2.5.2",
-    "browserify-shim": "^3.8.3",
     "browserify": "^9.0.3",
-    "vinyl-source-stream": "^1.1.0",
-     "connect": "^2.24.2"
+    "browserify-shim": "^3.8.10",
+    "connect": "^2.24.2",
+    "del": "^1.1.1",
+    "gulp": "^3.8.10",
+    "gulp-concat": "^2.5.2",
+    "pathmodify": "^0.4.0",
+    "vinyl-source-stream": "^1.1.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -26,6 +27,12 @@
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/benlau/dualless/issues"
+  },
+  "browserify": {
+    "transform": [ "browserify-shim" ]
+  },
+  "browserify-shim": {
+    "./src/chrome/lib/eventemitter.js": "EventEmitter"
   },
   "homepage": "https://github.com/benlau/dualless"
 }

@@ -2,7 +2,6 @@
  * 
  */
 
-define(function util() {
 	
 	function Rect() {
 		var fields = ["top","left","width","height"];
@@ -135,6 +134,4 @@ define(function util() {
 		return obj;
 	};
 	
-	
-	return Rect;
-});
+module.exports = Rect;
