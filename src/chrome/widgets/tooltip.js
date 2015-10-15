@@ -3,10 +3,8 @@
  * 
  */
 
-define(["module"],
-        function(self) {
     
-    var uri = self.uri;
+    var uri = "widgets/tooltip";
     var arr = uri.split("/");
     arr.pop();
     uri = arr.join("/");	    
@@ -37,5 +35,4 @@ define(["module"],
         $(this.element).html("<div class=dualless-tooltip-title>" + title + "</div>");
     }
    
-    return Tooltip; 
-});
+module.exports = Tooltip; 

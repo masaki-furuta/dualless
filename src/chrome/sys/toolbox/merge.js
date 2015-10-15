@@ -1,6 +1,5 @@
+var Rect = require("utils/rect");
 
-define(["dualless/utils/rect"],
-         function(Rect) {
 
     function merge(options,callback) {
         var windows = options.windows,
@@ -24,5 +23,4 @@ define(["dualless/utils/rect"],
         chrome.windows.update(master.id,rect,callback);
     }
 
-    return merge;
-});
+module.exports = merge;

@@ -2,10 +2,8 @@
 /* Information of known site
  */
 
-define(["module"],
-        function(self) {
             
-    var uri = self.uri;
+    var uri = "data/site";
     var arr = uri.split("/");
     arr.pop();
     uri = arr.join("/");	    
@@ -14,7 +12,7 @@ define(["module"],
        sites = data;
     });
 
-    return {
+    module.exports = {
         
       find : function(url) {
           var ret;
@@ -31,4 +29,3 @@ define(["module"],
         
     };
     
-});

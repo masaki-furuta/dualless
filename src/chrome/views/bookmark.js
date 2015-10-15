@@ -2,13 +2,9 @@
 /** Bookmark view
  * 
  */
+var Site = require('data/site');
 
-define(["module",
-        "dualless/data/site"],
-        function(self,
-                 Site) {
-   
-    var uri = self.uri;
+    var uri = "views/bookmark";
     var arr = uri.split("/");
     arr.pop();
     uri = arr.join("/");
@@ -136,9 +132,7 @@ define(["module",
         return o.toUpperCase() + "_" + p1 *10  + "_" + p2 * 10 + "_" + pos;
     }
 
-    // Factory for route provider
-    return {
-        templateUrl : uri + "/bookmark.html",
-        controller : Controller
-    };
-});
+module.exports = {
+    templateUrl : uri + "/bookmark.html",
+    controller : Controller
+};

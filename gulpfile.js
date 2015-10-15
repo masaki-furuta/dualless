@@ -28,7 +28,7 @@ gulp.task('assets',function() {
    return gulp.src(["src/chrome/*.html",
              "src/chrome/css/*",
              "src/chrome/**/*.css",
-             "src/chrome/lib/*",             
+             "src/chrome/lib/**",             
              "src/chrome/*.json",
              "src/chrome/*.png"
             ],{
@@ -62,7 +62,8 @@ gulp.task("background",function(next) {
 
 gulp.task("popup",function(next) {
     return browserify({
-        entries: ['./src/chrome/popup.js']
+        entries: ['./src/chrome/popup.js'],
+        paths: ['./src/chrome']
     }).bundle()
     .pipe(source('popup.js'))
     .pipe(gulp.dest(BUILD_FOLDER));    

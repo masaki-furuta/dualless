@@ -1,10 +1,6 @@
 
 /* Color Picker
  */
-
-define(["module",
-        "dualless/lib/bootstrap-colorpicker"],
-         function(self) {
              
     function Controller($scope,$element,$rootScope){
         var picker = $($element).colorpicker();
@@ -49,5 +45,4 @@ define(["module",
         return def;
 	}
     
-    return factory;
-});
+module.exports = factory;

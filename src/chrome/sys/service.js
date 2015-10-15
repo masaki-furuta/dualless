@@ -1,7 +1,6 @@
 /* WindowManager services
  */
 
-define(function() {
     if (chrome === undefined || chrome.extension === undefined)
         return;
     
@@ -53,5 +52,4 @@ define(function() {
         return service;
     }
     
-    return factory;
-});
+module.exports = factory;

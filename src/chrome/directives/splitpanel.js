@@ -1,8 +1,6 @@
 
-define(["module",
-        "dualless/controllers/splitpanelcontroller"],
-		function hsplitpanel(self,
-                             splitpanelcontroller) {
+var splitpanelcontroller = require("controllers/splitpanelcontroller");
+
 	var uri = self.uri;
 	var arr = uri.split("/");
 	arr.pop();
@@ -22,9 +20,8 @@ define(["module",
 		return def;
 	}
 	
-	return function(orientation) {
+	module.exports = function(orientation) {
         return function() {
             return factory(orientation);
         };
     }; 
-});

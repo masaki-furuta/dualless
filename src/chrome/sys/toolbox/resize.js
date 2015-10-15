@@ -1,6 +1,4 @@
-
-define(["dualless/utils/rect"],
-         function(Rect) {
+var Rect = require("utils/rect");
 
   	/** Resize a window
 	 * 
@@ -75,5 +73,4 @@ define(["dualless/utils/rect"],
 		chrome.windows.update(winId, updateInfo , checker);
 	};
 
-    return resize; 
-});
+module.exports = resize; 

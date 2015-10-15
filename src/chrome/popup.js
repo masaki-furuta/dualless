@@ -1,29 +1,12 @@
-requirejs.config({
-	paths : {
-		"dualless" : "."
-	}
-});
-
-require([ "dualless/views/panel",
-          "dualless/directives/bookmarklist",
-          "dualless/directives/winbutton",
-          "dualless/views/bookmark",
-          "dualless/directives/bookmarkeditor",
-          "dualless/directives/bookmarkitem",
-          "dualless/sys/service",
-          "dualless/directives/colorpicker",
-          "dualless/data/bookmarkdata"
-          ],
-          function popup(PanelView,
-                            bookmarklist,
-                            winbutton,
-                            bookmark,
-                            bookmarkeditor,
-                            bookmarkitem,
-                            WindowManagerService,
-                            colorPicker,
-                            bookmarkData
-                            ){
+var PanelView = require("views/panel");
+var bookmarklist = require("directives/bookmarklist");
+var winbutton = require("directives/winbutton");
+var bookmark = require("views/bookmark");
+var bookmarkeditor = require("directives/bookmarkeditor");
+var bookmarkitem = require("directives/bookmarkitem");
+var WindowManagerService = require("sys/service");
+var colorPicker = require("directives/colorpicker");
+var bookmarkData = require("data/bookmarkdata");
 
 	var app = angular.module("popup",[]);
 	
@@ -108,7 +91,6 @@ require([ "dualless/views/panel",
 	$(document).ready(function() {
 		angular.bootstrap(document,["popup"]);
 	});	
-});
           
           
           

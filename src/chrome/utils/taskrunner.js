@@ -1,5 +1,4 @@
 
-define(function taskrunner(){
 	
 	/** Execute a set of task with callback. It is a solution to prevent nested callback 
 	 * 
@@ -94,5 +93,4 @@ define(function taskrunner(){
 		return this._lastStep;
 	};
 	
-	return TaskRunner;
-});
+module.exports = TaskRunner;

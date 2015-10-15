@@ -1,8 +1,7 @@
 /* Pair Display Tool */
 
-define(["dualless/utils/taskrunner"],
-        function(TaskRunner){
-    
+var TaskRunner = require('utils/taskrunner');
+
 	/*
 	function PairDisplay() {
 		this.frozen = false;
@@ -149,5 +148,4 @@ define(["dualless/utils/taskrunner"],
 		}
 		};
 	 */	
-	return pair;
-});
+module.exports = pair;

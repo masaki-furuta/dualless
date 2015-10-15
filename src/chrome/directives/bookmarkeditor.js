@@ -1,7 +1,6 @@
 
-define(["module"],
-         function(self) {
-    var uri = self.uri;
+
+    var uri = "directive/bookmarkeditor";
     var arr = uri.split("/");
     arr.pop();
     uri = arr.join("/");	
@@ -111,5 +110,4 @@ define(["module"],
         return def;
     }
 
-    return factory;
-});
+module.exports = factory;

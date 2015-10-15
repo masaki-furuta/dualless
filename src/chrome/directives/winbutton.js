@@ -7,14 +7,9 @@
  * it is used for bookmarked links.
  */
 
-define(["module",
-         "dualless/widgets/tooltip",
-         "dualless/lib/eventemitter"],
-         function(self,
-                    Tooltip,
-                    EventEmitter) {
+var Tooltip = require("widgets/tooltip");
 
-    var uri = self.uri;
+    var uri = "directive/winbutton";
     var arr = uri.split("/");
     arr.pop();
     uri = arr.join("/");	    
@@ -452,5 +447,4 @@ define(["module",
         return def;
 	}
     
-    return factory;
-});
+module.exports = factory;

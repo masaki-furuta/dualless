@@ -6,15 +6,10 @@
  * @param callback
  */
 
-define(["dualless/sys/toolbox/resize",
-         "dualless/utils/rect",
-         "dualless/utils/taskrunner",
-         "dualless/utils/split"
-         ],
-        function(resize,
-                   Rect,
-                   TaskRunner,
-                   split) {
+var resize = require("sys/toolbox/resize");
+var Rect = require("utils/rect");
+var TaskRunner = require("utils/taskrunner");
+var split = require("utils/split");
 
     function arrange(target,options,callback) {
         var windows = options.windows,
@@ -86,7 +81,7 @@ define(["dualless/sys/toolbox/resize",
         
     }
     
-   return function(options,callback) {
+   module.exports = function(options,callback) {
             var windows = options.windows,
                  os = options.os,
                  viewport = options.viewport,
@@ -171,4 +166,3 @@ define(["dualless/sys/toolbox/resize",
        
    };
     
-});

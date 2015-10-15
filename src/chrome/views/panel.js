@@ -1,10 +1,8 @@
 
 // Panel view
 
-define(["module"],
-        function(self) {
 
-	var uri = self.uri;
+	var uri = "views/panel";
 	var arr = uri.split("/");
 	arr.pop();
 	uri = arr.join("/");
@@ -95,9 +93,7 @@ define(["module"],
                                 "WindowManager"
                                 ]
     
-    // Factory for route provider
-    return {
-        templateUrl : uri + "/panel.html",
-        controller : Controller
-    }
-});
+module.exports = {
+    templateUrl : uri + "/panel.html",
+    controller : Controller
+}

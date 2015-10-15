@@ -1,8 +1,5 @@
 
-
-
-define(["dualless/utils/rect"],
-        function(Rect) {
+var Rect = require("./rect");
 
     /** If any rectangle is smaller than the minSize,
      * the result will be adjusted.
@@ -119,5 +116,4 @@ define(["dualless/utils/rect"],
         return res;
     };
 
-    return split;
-});
+module.exports = split;
